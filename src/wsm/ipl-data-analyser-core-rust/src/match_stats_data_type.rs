@@ -102,10 +102,10 @@ pub struct MatchOverDeliveryReview {
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchOverDeliveryRuns {
-    batter: u8,
-    extras: u8,
-    non_boundary: Option<bool>,
-    total: u8,
+    pub batter: u8,
+    pub extras: u8,
+    pub non_boundary: Option<bool>,
+    pub total: u8,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -122,19 +122,19 @@ pub struct MatchOverDeliveryWicket {
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchOverDelivery {
-    batter: String,
-    bowler: String,
-    extras: Option<MatchOverDeliveryExtras>,
-    non_striker: String,
-    review: Option<MatchOverDeliveryReview>,
-    runs: MatchOverDeliveryRuns,
-    wickets: Option<Vec<MatchOverDeliveryWicket>>,
+    pub batter: String,
+    pub bowler: String,
+    pub extras: Option<MatchOverDeliveryExtras>,
+    pub non_striker: String,
+    pub review: Option<MatchOverDeliveryReview>,
+    pub runs: MatchOverDeliveryRuns,
+    pub wickets: Option<Vec<MatchOverDeliveryWicket>>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchInningsOver {
-    over: u16,
-    deliveries: Vec<MatchOverDelivery>,
+    pub over: u16,
+    pub deliveries: Vec<MatchOverDelivery>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -145,10 +145,10 @@ pub struct MatchInningsTarget {
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchStatInnings {
-    team: String,
-    overs: Option<Vec<MatchInningsOver>>,
-    target: Option<MatchInningsTarget>,
-    super_over: Option<bool>,
+    pub team: String,
+    pub overs: Option<Vec<MatchInningsOver>>,
+    pub target: Option<MatchInningsTarget>,
+    pub super_over: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]

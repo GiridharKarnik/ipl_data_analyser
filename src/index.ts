@@ -2807,7 +2807,10 @@ const calculateAvgScoreUsingWasm = () => {
 
     // console.log(matchStats.length)
 
-    avg_score(matchStats);
+    const calculatedAvgScore: number = avg_score(matchStats, team);
+    const avgScore2: number = avgScore(matchStats, team);
+
+    console.log(`calculated average score rust: ${calculatedAvgScore}, js: ${avgScore2}`);
 }
 
 let t = process.hrtime();
