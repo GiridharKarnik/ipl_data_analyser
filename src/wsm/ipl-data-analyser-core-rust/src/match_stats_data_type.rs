@@ -1,11 +1,11 @@
+use serde_derive::{Deserialize, Serialize};
 use std::collections::HashMap;
-use serde_derive::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchStatMeta {
     data_version: String,
     created: String,
-    revision: String,
+    revision: u32,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -49,7 +49,7 @@ pub struct MatchStatInfoOutcome {
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchRegistry {
-    people: HashMap<String, Vec<String>>,
+    people: HashMap<String, String>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -61,25 +61,25 @@ pub struct MatchToss {
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchStatInfo {
-    balls_per_over: u8,
-    bowl_out: Option<MatchStatInfoBowlOut>,
-    city: String,
-    event: Option<MatchStatInfoEvent>,
-    gender: String,
-    match_type: String,
-    match_type_number: Option<u32>,
-    missing: Option<Vec<String>>,
-    officials: Option<MatchOfficials>,
-    outcome: MatchStatInfoOutcome,
-    overs: u16,
-    player_of_match: Option<Vec<String>>,
-    players: HashMap<String, Vec<String>>,
-    registry: MatchRegistry,
-    season: String,
-    team_type: String,
-    teams: Vec<String>,
-    toss: MatchToss,
-    venue: String,
+    pub balls_per_over: u8,
+    pub bowl_out: Option<MatchStatInfoBowlOut>,
+    pub city: Option<String>,
+    pub event: Option<MatchStatInfoEvent>,
+    pub gender: String,
+    pub match_type: String,
+    pub match_type_number: Option<u32>,
+    pub missing: Option<Vec<String>>,
+    pub officials: Option<MatchOfficials>,
+    pub outcome: MatchStatInfoOutcome,
+    pub overs: u16,
+    pub player_of_match: Option<Vec<String>>,
+    pub players: HashMap<String, Vec<String>>,
+    pub registry: MatchRegistry,
+    pub season: Option<String>,
+    pub team_type: String,
+    pub teams: Vec<String>,
+    pub toss: MatchToss,
+    pub venue: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -107,7 +107,6 @@ pub struct MatchOverDeliveryRuns {
     non_boundary: Option<bool>,
     total: u8,
 }
-
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchOverDeliveryWicketFielder {
@@ -154,7 +153,7 @@ pub struct MatchStatInnings {
 
 #[derive(Serialize, Deserialize)]
 pub struct MatchStat {
-    meta: MatchStatMeta,
-    info: MatchStatInfo,
-    innings: Vec<MatchStatInnings>,
+    pub meta: MatchStatMeta,
+    pub info: MatchStatInfo,
+    pub innings: Vec<MatchStatInnings>,
 }
