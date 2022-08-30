@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "start": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "compareAlgorithms": "ts-node-dev --respawn --transpile-only src/algorithmComparison.ts"
   },
   "dependencies": {
     "@types/node": "^17.0.21",
     "@types/ws": "^8.5.2",
+    "cli-table": "^0.3.11",
     "fs-extra": "^10.1.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.2",
@@ -16,6 +18,7 @@
     "ws": "^8.5.0"
   },
   "devDependencies": {
+    "@types/cli-table": "^0.3.0",
     "@types/fs-extra": "^9.0.13",
     "chalk": "^5.0.1",
     "colors": "^1.4.0",

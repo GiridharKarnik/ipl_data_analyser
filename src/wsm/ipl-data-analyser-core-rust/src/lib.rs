@@ -1,6 +1,8 @@
 mod utils;
 mod match_stats_data_type;
 mod match_stats;
+mod alrorithms;
+mod random_generators;
 
 use wasm_bindgen::prelude::*;
 use web_sys::console;
